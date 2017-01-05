@@ -1,7 +1,5 @@
-// This solution works but I am unclear
-//as to how n-3 in the for loop creates the
-//desired result, if n = 3, wouldn't the result be
-//...WAIT IT ALL MAKES SENSE NOW....
+// This solution works...(n-3) in the for loop creates the
+//desired result, if n = 3,
 //result[i-1] = result[3-1] = result[2] = 1
 //result[i-1] = result[3-2] = result[1] = 1
 //result[i-1] = result[3-3] = result[0] = 0
