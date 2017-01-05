@@ -201,3 +201,6 @@ function scramble(str1, str2) {
     }
     return (x <= array1.length);
 }
+
+Dictionary Solution
+
