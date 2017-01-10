@@ -1,3 +1,90 @@
+//////////////
+///ENOUGH/////
+//////////////
+
+  // function enough = (num) {
+  //   if (num > )
+  // }
+  // var farr = arr.filter(enough)
+
+function deleteNth(arr, x){
+  return arr.reduce(function(a, v){
+    // a = [];
+    //
+    return count(a, v) < x ? a.concat(v) : a;
+  }, []);
+}
+
+function count(arr, z){
+  return arr.filter(function(q){ return z == q }).length;
+}
+
+
+
+function deleteNth (arr, n) {
+ var count = 0;
+  for (var i = 0; i < arr.length; i++){
+   if(arr[i]) {
+    count += i
+    console.log(count)
+    var arrCount = count
+      if (arrCount >= n) {
+       arr.splice(i,1)
+      }
+    }
+      // return arr
+  }
+}
+
+/////////////
+//PlayPass///
+/////////////
+
+function playPass(s, n) {
+
+}
+
+
+function shift(word,num) {
+  newWord = [];
+  shiftWord = [];
+  newWord = word.split('');
+  for(var i = 0; i<newWord.length; i++){
+    var code = newWord[i].charCodeAt();
+      if(code + num > 122) {
+        var code = code + num;
+        var remainder = code - 122;
+        var newcode = (96 + remainder);
+        newcode = String.fromCharCode(newcode);
+        shiftWord.push(newcode);
+        console.log(shiftWord)
+      } else if (code + num > 90) {
+        var code = code + num;
+        var remainder = code - 90;
+        var newcode = (64 + remainder);
+        newcode = String.fromCharCode(newcode);
+        shiftWord.push(newcode);
+        console.log(shiftWord)
+      } else {
+        newcode = code + num
+        newcode = String.fromCharCode(newcode);
+        shiftWord.push(newcode)
+        console.log(shiftWord);
+      }
+      // if(typeof newWord[i] === 'number') {
+      //   var code = word[i];
+      //   code = (9 - code);
+      //   shiftWord.push(code);
+      // }
+  }
+  return shiftWord;
+}
+
+// (a-z) = (97-122)
+// (A-z) = (65-90)
+// (0-9) = (48-57)
+
+
 // This solution works...(n-3) in the for loop creates the
 //desired result, if n = 3,
 //result[i-1] = result[3-1] = result[2] = 1
