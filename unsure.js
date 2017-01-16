@@ -1,3 +1,92 @@
+var lastDigit = function(str1, str2){
+  /* see JavaScript remarks below */
+  if (str1.slice(-1) == 0 || str2.slice(-1) == 0) {
+    return 0;
+  }
+  else {
+    str1 = str1.slice(-3);
+    str2 = str2.slice(-3);
+    str1 = parseInt(str1);
+    str2 = parseInt(str2);
+    var power = Math.pow(str1,str2);
+    power = power.slice(-1)
+    // var newTotal = power.toString();
+    // var slicedNum = newTotal.slice(-1);
+    // var lastNum = parseInt(slicedNum);
+    return lastNum
+  }
+
+  var lastDigit = function(str1, str2){
+  /* see JavaScript remarks below */
+  if (str1.slice(-1) == 0 || str2.slice(-1) == 0) {
+    return 0;
+  }
+  else {
+    str1 = str1.slice(-3);
+    str2 = str2.slice(-3);
+    str1 = parseInt(str1);
+    str2 = parseInt(str2);
+    var power = Math.pow(str1,str2);
+    power = power.slice(-1)
+    return power
+  }
+
+
+var lastDigit = function(str1, str2){
+  /* see JavaScript remarks below */
+  if (str1.slice(-1) == 0 || str2.slice(-1) == 0) {
+    return 0;
+  }
+  else {
+    str1 = str1.slice(-3);
+    str2 = str2.slice(-3);
+    str1 = parseInt(str1);
+    str2 = parseInt(str2);
+    console.log(str1,str2);
+    var power = Math.pow(str1,str2);
+    console.log(power);
+    var lastone = power.toString().split('').pop()
+    return lastone
+  }
+ }
+
+  var lastDigit = function(str1, str2){
+  /* see JavaScript remarks below */
+  if (str1.slice(-1) == 0 || str2.slice(-1) == 0) {
+    return 0;
+  }
+  else {
+    str1 = str1.slice(-2);
+    str2 = str2.slice(-2);
+    console.log(str1);
+    console.log(str2);
+    // str1 = str1.join('');
+    str1 = parseInt(str1);
+    // str2 = str2.join('');
+    str2 = parseInt(str2);
+    console.log(str1,str2);
+    var power = Math.pow(str1,str2);
+    console.log(power);
+    var lastone = power.toString().split('').pop()
+    return lastone
+  }
+ }
+
+var lastDigit = function(str1, str2){
+  /* see JavaScript remarks below */
+  var str1 = parseInt(str1);
+  var str2 = parseInt(str2);
+  var power = Math.pow(str1,str2);
+  var newTotal = power.toString();
+  var arrayTotal = newTotal.split('');
+  var lastNum = arrayTotal.pop();
+  var lastNum = parseInt(lastNum);
+  return lastNum
+}
+
+
+
+
 //////////////
 ///ENOUGH/////
 //////////////
@@ -20,20 +109,12 @@ function count(arr, z){
 }
 
 
-
-function deleteNth (arr, n) {
- var count = 0;
-  for (var i = 0; i < arr.length; i++){
-   if(arr[i]) {
-    count += i
-    console.log(count)
-    var arrCount = count
-      if (arrCount >= n) {
-       arr.splice(i,1)
-      }
-    }
-      // return arr
-  }
+function deleteNth(arr,x) {
+  var cache = {};
+  return arr.filter(function(n) {
+    cache[n] = (cache[n] || 0) + 1;
+    return cache[n] <= x;
+  });
 }
 
 /////////////
