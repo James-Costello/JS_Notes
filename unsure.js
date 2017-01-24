@@ -1,3 +1,49 @@
+//////////////////
+//toCamelCase/////
+//////////////////
+
+//The loop does not work for underscore
+//Confusing....
+
+
+function toCamelCase(str){
+  for (var i = 0; i < str.length; i++){
+    if(str[i] === '-') {
+        str[i]++;
+        str[i].toUpperCase();
+    } else if (str[i] === '_') {
+        str[i]++;
+        str[i].toUpperCase();
+//         var unstr = str[i+1];
+//         console.log("finding char: " + unstr)
+//         var cap = unstr.toUpperCase();
+//         console.log("capitalizing: " + cap)
+//         var char = str[i+1].
+
+      }
+  }
+  var newstr = str.replace(/-|_/gi, '');
+  return newstr;
+}
+
+
+/////WORKING////
+
+function toCamelCase(str){
+  return str
+    // Replaces any - or _ characters with a space
+    .replace( /[-_]+/g, ' ')
+    // Removes any non alphanumeric characters
+    .replace( /[^\w\s]/g, '')
+    // Uppercases the first character in each group immediately following a space
+    // (delimited by spaces)
+    .replace( / (.)/g, function($1) { return $1.toUpperCase(); })
+    // Removes spaces
+    .replace( / /g, '' );
+}
+
+
+
 var lastDigit = function(str1, str2){
   /* see JavaScript remarks below */
   if (str1.slice(-1) == 0 || str2.slice(-1) == 0) {
