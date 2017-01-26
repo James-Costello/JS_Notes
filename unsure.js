@@ -1,33 +1,40 @@
-//////////////////
-//toCamelCase/////
-//////////////////
+//////////////////////////
+///Merged String Checker//
+//////////////////////////
 
-//The loop does not work for underscore
-//Confusing....
+function isMerge(s, part1, part2) {
+  // s = codewars
+  // part1 = cdw
+  // part2 = oears
+  if (part1.charAt(0) === (s.charAt(0)) {
+    // return "part1 matches s"
+    return
 
-
-function toCamelCase(str){
-  for (var i = 0; i < str.length; i++){
-    if(str[i] === '-') {
-        str[i]++;
-        str[i].toUpperCase();
-    } else if (str[i] === '_') {
-        str[i]++;
-        str[i].toUpperCase();
-//         var unstr = str[i+1];
-//         console.log("finding char: " + unstr)
-//         var cap = unstr.toUpperCase();
-//         console.log("capitalizing: " + cap)
-//         var char = str[i+1].
-
-      }
+  } else {
+    return false
   }
-  var newstr = str.replace(/-|_/gi, '');
-  return newstr;
 }
 
 
-/////WORKING////
+function isMerge(str, substr1, substr2) {
+
+  if (str.length !== substr1.length + substr2.length) {
+    return false;
+  }
+  if (str.length === 0) {
+    return true;
+  }
+
+  return (substr1[0] === str[0] && isMerge(str.slice(1), substr1.slice(1), substr2)) ||
+  (substr2[0] === str[0] && isMerge(str.slice(1), substr1, substr2.slice(1)));
+
+}
+
+
+
+//////////////////
+//toCamelCase/////
+//////////////////
 
 function toCamelCase(str){
   return str
@@ -277,7 +284,7 @@ for (var i = 0; i <= num2arr.length; i++) {
 /////////////////
 
 // VM485:1 Uncaught ReferenceError: Invalid left-hand side in assignment
-//This is error is a result of the fact that you cannot asgin a new value to the result of a function
+//This is error is a result of the fact that you cannot asign a new value to the result of a function
 // So var num = 123
 // num.charAt(0) = 'd' will return an error
 //instead....
