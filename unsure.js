@@ -2,12 +2,6 @@
 //////IPv4 Checker///////
 /////////////////////////
 
-function isValidIP(str) {
-  let regex = /\d\.\d\.\d\.\d\s\d{3}\.\d{2}\.\d{2}\.\d{2}/;
-  let checked = str.match(regex);
-  console.log(checked);
-}
-
 
 //last numbers added still return true?
 function isValidIP(str) {
@@ -17,7 +11,21 @@ function isValidIP(str) {
 }
 
 
+//Passes test
+function isValidIP(str)
+{
+ if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(str))
+  {
+    return (true)
+  }
+// alert("You have entered an invalid IP address!")
+return (false)
+}
 
+//Top solution
+function isValidIP(str) {
+  return /^(([1-9]?\d|1\d\d|2[0-4]\d|25[0-5])(\.(?!$)|$)){4}$/.test(str);
+}
 
 //////////////////////////
 ///Merged String Checker//
