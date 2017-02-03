@@ -1,3 +1,24 @@
+/////////////////////////
+//////IPv4 Checker///////
+/////////////////////////
+
+function isValidIP(str) {
+  let regex = /\d\.\d\.\d\.\d\s\d{3}\.\d{2}\.\d{2}\.\d{2}/;
+  let checked = str.match(regex);
+  console.log(checked);
+}
+
+
+//last numbers added still return true?
+function isValidIP(str) {
+  let checked = (/\d\.\d\.\d\.\d\s\d{3}\.\d{2}\.\d{2}\.\d{2}$/).test(str)
+  console.log(checked);
+  checked == true ? true : false;
+}
+
+
+
+
 //////////////////////////
 ///Merged String Checker//
 //////////////////////////
