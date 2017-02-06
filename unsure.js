@@ -1,4 +1,23 @@
 /////////////////////////
+///////smallest//////////
+/////////////////////////
+
+
+//flawed
+function smallest(n) {
+  var arr = [];
+  let num = n.toString().split('');
+  let sorted = num.sort((a,b) => a - b)
+  let smallest = sorted[0];
+  let idx = num.indexOf(smallest)
+  arr.push(idx)
+  console.log(arr)
+}
+
+
+
+
+/////////////////////////
 //////IPv4 Checker///////
 /////////////////////////
 
