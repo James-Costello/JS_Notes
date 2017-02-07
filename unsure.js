@@ -3,6 +3,7 @@
 /////////////////////////
 
 
+//needs indexOf
 //flawed
 function smallest(n) {
   var arr = [];
